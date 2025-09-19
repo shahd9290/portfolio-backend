@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import routes from './src/routes/backendRoutes';
 import 'dotenv/config';
+import cors from 'cors';
 
 
 const app = express();
@@ -19,6 +20,13 @@ mongoose.connect(`mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@portfoli
 // body parser setup
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+// cors
+app.use(cors({
+    origin: process.env.FRONTEND, // your Next.js dev server
+    methods: ["GET"],
+    credentials: true
+}));
 
 // serving static files
 app.use(express.static('public'));
