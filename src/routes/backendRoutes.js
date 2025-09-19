@@ -1,4 +1,4 @@
-import {addNewTestimonial, getTestimonials} from '../controllers/backendController';
+import {addNewTestimonial, getTestimonials, getTestimonialWithId} from '../controllers/backendController';
 
 const routes = (app) => {
     app.route('/testimonial')
@@ -6,7 +6,9 @@ const routes = (app) => {
 
         .post(addNewTestimonial);
 
-    app.route('/contact/:contactId')
+    app.route('/testimonial/:testimonialId')
+        .get(getTestimonialWithId)
+
         .put((req, res) => {
             res.send("PUT request");
         })

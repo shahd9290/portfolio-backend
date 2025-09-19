@@ -21,3 +21,12 @@ export const getTestimonials = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+export const getTestimonialWithId = async (req, res) => {
+    try {
+        const data = await Testimonial.findById(req.params.testimonialId);
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
