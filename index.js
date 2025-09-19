@@ -20,6 +20,9 @@ mongoose.connect(`mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@portfoli
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// serving static files
+app.use(express.static('public'));
+
 routes(app);
 
 app.get('/', (req, res) => {
