@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import {testimonialSchema} from "../models/backendModels";
+import {testimonialSchema} from "../models/testimonialModel";
 
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);
 
