@@ -1,4 +1,9 @@
-import {addNewTestimonial, getTestimonials, getTestimonialWithId} from '../controllers/backendController';
+import {
+    addNewTestimonial, deleteTestimonial,
+    getTestimonials,
+    getTestimonialWithId,
+    updateTestimonial
+} from '../controllers/backendController';
 
 const routes = (app) => {
     app.route('/testimonial')
@@ -9,13 +14,9 @@ const routes = (app) => {
     app.route('/testimonial/:testimonialId')
         .get(getTestimonialWithId)
 
-        .put((req, res) => {
-            res.send("PUT request");
-        })
+        .put(updateTestimonial)
 
-        .delete((req, res) => {
-            res.send("DELETE request");
-        })
+        .delete(deleteTestimonial)
 }
 
 export default routes;
