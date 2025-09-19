@@ -16,10 +16,10 @@ jobs:
       matrix:
         node-version: [22.10.0]
     env:
-      PORT: ${{secrets.PORT}}
-      MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}
-      MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
-      FRONTEND: ${{secrets.FRONTEND}}
+      PORT: ${{ secrets.PORT }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+      FRONTEND: ${{ secrets.FRONTEND }}
 
     steps:
     - uses: actions/checkout@v4
@@ -32,4 +32,5 @@ jobs:
     - run: npm run build --if-present
     - name: Change Directory
       run: cd /home/danyal/actions-runner/pfbackend-runner/_work/portfolio-backend/portfolio-backend
-    - run: pm2 restart 3
+    - run: pm2 restart 3 --update-env
+
