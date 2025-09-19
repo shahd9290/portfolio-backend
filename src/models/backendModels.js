@@ -19,8 +19,12 @@ export const testimonialSchema = new Schema({
         type: Date,
         required: true
     },
-    relation: {
+    company: {
         type: String,
         required: true
     },
+    role: {
+        type: String,
+        required: true
+    }
 });
