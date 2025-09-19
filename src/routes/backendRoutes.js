@@ -1,8 +1,15 @@
 const routes = (app) => {
     app.route('/contact')
-        .get((req, res) => {
-            res.send("GET request");
-        })
+        .get((req, res, next) => {
+                //  middleware
+                console.log(`Received ${req.method} to ${req.originalUrl}`);
+                console.log(`Request type ${req.method}`);
+                next();
+            },
+            (req, res, next) => {
+                res.send("GET request");
+
+            })
 
         .post((req, res) => {
             res.send("POST request");
