@@ -1,17 +1,8 @@
-import {addNewTestimonial} from '../controllers/backendController';
+import {addNewTestimonial, getTestimonials} from '../controllers/backendController';
 
 const routes = (app) => {
     app.route('/testimonial')
-        .get((req, res, next) => {
-                //  middleware
-                console.log(`Received ${req.method} to ${req.originalUrl}`);
-                console.log(`Request type ${req.method}`);
-                next();
-            },
-            (req, res, next) => {
-                res.send("GET request");
-
-            })
+        .get(getTestimonials)
 
         .post(addNewTestimonial);
 

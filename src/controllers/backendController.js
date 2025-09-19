@@ -12,3 +12,12 @@ export const addNewTestimonial = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
+
+export const getTestimonials = async (req, res) => {
+    try {
+        const data = await Testimonial.find({});
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
