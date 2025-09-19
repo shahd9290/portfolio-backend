@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import {projectsSchema} from "../models/ProjectModel";
+import {projectsSchema} from "../models/projectModel";
 
 const Project = mongoose.model('Project', projectsSchema);
 
