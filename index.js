@@ -12,7 +12,7 @@ const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD;
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect(`mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@portfolio-backend.jqwkh3w.mongodb.net/?retryWrites=true&w=majority&appName=portfolio-backend`, {
+mongoose.connect(`mongodb+srv://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@portfolio-backend.jqwkh3w.mongodb.net/portfolio?retryWrites=true&w=majority&appName=portfolio-backend`, {
     useNewUrlParser: true,
 });
 

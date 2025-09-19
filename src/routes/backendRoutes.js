@@ -1,5 +1,7 @@
+import {addNewTestimonial} from '../controllers/backendController';
+
 const routes = (app) => {
-    app.route('/contact')
+    app.route('/testimonial')
         .get((req, res, next) => {
                 //  middleware
                 console.log(`Received ${req.method} to ${req.originalUrl}`);
@@ -11,9 +13,7 @@ const routes = (app) => {
 
             })
 
-        .post((req, res) => {
-            res.send("POST request");
-        })
+        .post(addNewTestimonial);
 
     app.route('/contact/:contactId')
         .put((req, res) => {
