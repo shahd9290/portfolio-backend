@@ -29,5 +29,5 @@ jobs:
     - run: npm run build --if-present
     - name: Change Directory
       run: cd /home/danyal/actions-runner/pfbackend-runner/_work/portfolio-backend/portfolio-backend
-    - run: pm2 restart 3 --update-env
+    - run: pm2 restart 1 --update-env
 
